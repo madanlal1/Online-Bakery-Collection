@@ -1,0 +1,27 @@
+
+
+.form {
+  padding: 40px;
+  width:550px;
+  margin:40px auto;
+  border: 2px solid green;
+  border-radius:20px;
+  box-shadow:0 4px 10px 4px rgba(form-bg,.3);
+  text-align: center;
+  margin:auto;
+  
+}
+
+
+h1 {
+  text-align:center;
+  color:rgb(68, 124, 82);
+  font-weight:bold;
+  margin:0 0 40px;
+}
+h2 {
+  text-align:center;
+  color:rgb(42, 116, 70);
+  font-weight:thin;
+  margin:0 0 40px;
+}

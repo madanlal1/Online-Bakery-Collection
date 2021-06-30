@@ -10,7 +10,7 @@ header
     height: auto;
     background-color:rgb(48, 46, 46);
     color: white;
-    padding: 15px;
+    padding: 12px;
     padding: auto;
     font-size: 20px;
   }
@@ -73,6 +73,7 @@ h3
 .card:hover
 {
     transform: scale(1.1,1.1);
+    box-shadow: 0 4px 16px 0 rgb(122, 119, 119),0 4px 16px 0 rgb(122, 119, 119);
 }
 #body,#cookie
 {

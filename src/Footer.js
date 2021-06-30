@@ -6,7 +6,7 @@ function Footer(){
     <>
         <footer>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-sm-12 col-xs-12">
+                <div class="py-4 col-xl-4 col-lg-4 col-sm-12 col-xs-12">
                     <br/><br/>
                     <img src="images/logo.png" alt="logo" width="140px" />
                     <strong><h3>Online Bakery Collection</h3></strong>
@@ -30,7 +30,7 @@ function Footer(){
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-sm-12 col-xs-12 left">
-                    <br/>
+                <br/><br/>
                     <strong id="aboutUs">About Us</strong>
                     <br/><br/>
                     <b>Madan Lal</b>
@@ -38,19 +38,12 @@ function Footer(){
                     Department of Software Engineering
                     <br/>
                     Sukkur IBA University
-                    <br/><br/>
+                    <br/><br/><br/>
                     <b>Safdar Hussain</b>
                     <br/>
                     Department of Computer Science
                     <br/>
                     Sukkur IBA University
-                    <br/><br/>  
-                    <b>Wahiba Akram</b>
-                    <br/>
-                    Department of Computer Science
-                    <br/>
-                    Sukkur IBA University
-                    <br/><br/>
                 </div>
             </div>
         </footer>

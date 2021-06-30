@@ -12,6 +12,7 @@ import Donuts from './Donuts';
 import Bread from './Bread';
 import Brownies from './Brownies';
 import FastFood from './FastFood';
+import SignIn from './SignIn';
 
 // render header here......................................................................
 ReactDOM.render(
@@ -32,9 +33,9 @@ ReactDOM.render(
     <Route exact path="/Bread.js" component={Bread} />
     <Route exact path="/Brownies.js" component={Brownies} />
     <Route exact path="/FastFood.js" component={FastFood} />
+    <Route exact path="/SignIn.js" component={SignIn} />
     <Route exact path="" component={App} />
   </Switch>
-  
   </BrowserRouter>,
   document.getElementById('body')
   );

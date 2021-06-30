@@ -2,6 +2,7 @@ import React from 'react';
 import Cards from './Cards';
 import CardsData from './CardsData';
 
+
 function App() {
   return (
     CardsData.map(cData)
@@ -10,7 +11,7 @@ function App() {
 
 export default App;
 
-  // cards attribute data 
+// cards attribute data 
   function cData(val){
     return(
     <>
@@ -19,4 +20,4 @@ export default App;
             </div>
     </>
     );
-    }
+  }
