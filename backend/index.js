@@ -25,9 +25,9 @@ app.get('/LogIn.js', (req, res)=>{
         if(err) throw err
         console.log("connected")
 
-        const sqlInsert = "INSERT INTO login (username, password, status) VALUES (?,?);";
+        const sqlInsert = "INSERT INTO login (firstname, lastname, email, password, status) VALUES (?,?);";
 
-        connect.query(sqlInsert, [user, password], (err, res)=>{
+        connect.query(sqlInsert, ["Nazeer", "Ahmed", user, password, "user"], (err, res)=>{
             connect.release()// return connection to db
         if(err){
             console.log(err.message)

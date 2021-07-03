@@ -2,13 +2,9 @@ import './SignIn.css';
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
 
-function GetLoginData(){
-    
-  }
-
 export default function SignIn() {
-    const {user, setUser} = useState("");
-    const {password, setPassword} = useState("");
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
 
     const SubmitLogin = ()=> {
         Axios.post("http://localhost:3001/api/insert", 
