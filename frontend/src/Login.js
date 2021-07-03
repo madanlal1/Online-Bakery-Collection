@@ -1,6 +1,21 @@
 import './SignIn.css';
+import React, {useState, useEffect} from 'react';
+import Axios from 'axios';
+
+function GetLoginData(){
+    
+  }
 
 export default function SignIn() {
+    const {user, setUser} = useState("");
+    const {password, setPassword} = useState("");
+
+    const SubmitLogin = ()=> {
+        Axios.post("http://localhost:3001/api/insert", 
+        {user: user, password: password}).then(()=>{
+          alert("Logined");
+        })
+    }
   return (
     <>
     <div class="row">
@@ -18,14 +33,20 @@ export default function SignIn() {
         <br/>
       </div>
       </div>
+      
       <div class="row">
-        <input type="text" class="form-control" placeholder="Email"/>
+        <input type="text" class="form-control" placeholder="Email" name="user" onChange = {(e)=>{
+            setUser(e.target.value);
+        }}/>
       </div> 
       <div class="row">
+
         <br/>
       </div>
       <div class="row">
-        <input type="password" class="form-control" placeholder="Password"/>
+        <input type="password" class="form-control" placeholder="Password" name="password" onChange = {(e)=>{
+            setPassword(e.target.value);
+        }}/>
       </div> 
       <div class="row">
         <a href="#">Forget Password?</a>
@@ -34,7 +55,7 @@ export default function SignIn() {
         <br/>
       </div>
       <div class="row">
-        <button class="form-control btn btn-outline-success">LOG IN</button> 
+        <button class="form-control btn btn-outline-success" onClick={SubmitLogin}>LOG IN</button> 
       </div> <br/>
       <div class="row">
       <a href="SignIn.js">

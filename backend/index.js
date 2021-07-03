@@ -1,5 +1,7 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+const cors = require('cors');
 const mysql = require('mysql');
 
 //MySql
@@ -10,15 +12,22 @@ const db = mysql.createPool({
     database: 'bakreydb'
 });
 
-app.get('/', (req, res)=>{
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.get('/LogIn.js', (req, res)=>{
+
+    const user = req.body.user;
+    const password = req.body.password;
 
     db.getConnection((err, connect)=>{
         if(err) throw err
         console.log("connected")
 
-        const sqlInsert = "INSERT INTO login (username, password, status) VALUES ('Nazeer', 'n123','admin');";
+        const sqlInsert = "INSERT INTO login (username, password, status) VALUES (?,?);";
 
-        connect.query(sqlInsert, (err, res)=>{
+        connect.query(sqlInsert, [user, password], (err, res)=>{
             connect.release()// return connection to db
         if(err){
             console.log(err.message)
