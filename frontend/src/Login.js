@@ -1,9 +1,7 @@
 import './SignIn.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import Axios from 'axios';
-import MainPage from './index.js';
-
+//import Axios from 'axios';
 
 export default function SignIn() {
     const history = useHistory();
@@ -12,6 +10,11 @@ export default function SignIn() {
     const [serverResponse,setServerResponse]=useState("")
 
     const SubmitLogin = ()=> {
+      if(email === "" && password==="")
+      {
+        alert("Fields can't be empty")
+        return;
+      }
       var data={
         email:email,
         password:password
@@ -37,14 +40,11 @@ export default function SignIn() {
         }
         else
         {
-          setServerResponse("Not Loged in")
+          setServerResponse("Incorrecet email or password! please try again")
         }
         
       });
-      // Axios.post("http://localhost:3001/login", 
-        // {email: email, password: password}).then(()=>{
-        //   alert("Logined");
-        // })
+      
     }
   return (
     <>
@@ -86,13 +86,14 @@ export default function SignIn() {
       </div>
       <div class="row">
         <button class="form-control btn btn-outline-success" onClick={SubmitLogin}>LOG IN</button> 
-      </div> <br/>
+        {serverResponse}
+      </div> <br/><br/>
       <div class="row">
       <a href="SignIn.js">
       <button class="form-control btn btn-outline-success">Create Your Account</button>
       
       </a>
-      {serverResponse}
+      
       </div>
 
 
