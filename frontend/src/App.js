@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Cards from './Cards';
 import CardsData from './CardsData';
 
@@ -9,10 +9,7 @@ function App() {
   );
 }
 
-function GetLoginData(){
-  const {user, setUser} = useState("");
-  const {password, setPassword} = useState("");
-}
+
 
 export default App;
 
