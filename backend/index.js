@@ -92,9 +92,9 @@ app.post("/login", (req, res)=>{
             
             const sqlInsert = "INSERT INTO login (firstname, lastname, email, password, status) VALUES (?,?,?,?,?)";
 
-            connect.query(sqlInsert, [req.body.fname, req.body.lname, req.body.email, req.body.password, "user"], (err, rows)=>{
+            connect.query(sqlInsert, [req.body.fname, req.body.lname, req.body.email, req.body.password, 'user'], (err, rows)=>{
         
-            //connect.query("INSERT INTO login (firstname, lastname, email, password, status) VALUES(req.body.fname}, req.body.lname, req.body.email, req.body.password, "user")",(err,rows,fields)=>{
+            //connect.query("INSERT INTO login (firstname, lastname, email, password, status) VALUES('${req.body.fname}', req.body.lname, req.body.email, req.body.password, "user")",(err,rows,fields)=>{
                 //if(err) throw err
                 //res.send(rows.json())
                 if(err){
