@@ -1,11 +1,16 @@
 import './SignIn.css';
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import Axios from 'axios';
+import MainPage from './index.js';
+
 
 export default function SignIn() {
+    const history = useHistory();
     const [email, setemail] = useState(""); 
     const [password, setPassword] = useState("");
     const [serverResponse,setServerResponse]=useState("")
+
     const SubmitLogin = ()=> {
       var data={
         email:email,
@@ -25,8 +30,10 @@ export default function SignIn() {
       }).then((data)=>{
         if(data.length>0)
         {
-          
-          setServerResponse("Loged in")
+          alert("Loged in");
+          setServerResponse("Loged in");
+          history.push("/");
+
         }
         else
         {
