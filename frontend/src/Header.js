@@ -42,9 +42,11 @@ function Header(){
         
         </div>
         <div className="px-4 col-xl-1 col-lg-1 col-sm-6 col-xs-12 hvr">
+            <a href ="CartScreen.js">
         <i className="fas fa-cart-arrow-down"></i>
-        0
+        0</a>
         </div>
+
         <div className=" col-xl-2 col-lg-2 col-sm-6 col-xs-12">
         <button type="button" class="btn btn-outline-secondary form-control" data-toggle="modal" data-target="#myModal">
         <a href="LogIn.js">

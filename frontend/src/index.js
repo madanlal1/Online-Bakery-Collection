@@ -14,6 +14,7 @@ import Brownies from './Brownies';
 import FastFood from './FastFood';
 import SignIn from './SignIn';
 import LogIn from './Login';
+import CartScreen from './screens/CartScreen';
 
 // render header here......................................................................
 ReactDOM.render(
@@ -36,6 +37,7 @@ ReactDOM.render(
     <Route exact path="/FastFood.js" component={FastFood} />
     <Route exact path="/SignIn.js" component={SignIn} />
     <Route exact path="/LogIn.js" component={LogIn} />
+    <Route path="CartScreen.js" component={CartScreen}/>
     <Route exact path="" component={App} />
   </Switch>
   </BrowserRouter>,
