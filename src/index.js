@@ -13,48 +13,50 @@ import Bread from './Bread';
 import Brownies from './Brownies';
 import FastFood from './FastFood';
 import SignIn from './SignIn';
-
+// --------------------------
+import MainStartingApp from './MainStartingApp'
+// ---------------------------
 // render header here......................................................................
 ReactDOM.render(
 
   <BrowserRouter>
-  <Header />
+  <MainStartingApp />
   </BrowserRouter>,
-  document.getElementById('header')
+  document.getElementById('root')
 );
 
 // rendering cards from here.............................................................
-ReactDOM.render(
-  <BrowserRouter>
-  <Switch>
-    <Route exact path="/Cookies.js" component={Cookies} />
-    <Route exact path="/Cakes.js" component={Cakes} />
-    <Route exact path="/Donuts.js" component={Donuts} />
-    <Route exact path="/Bread.js" component={Bread} />
-    <Route exact path="/Brownies.js" component={Brownies} />
-    <Route exact path="/FastFood.js" component={FastFood} />
-    <Route exact path="/SignIn.js" component={SignIn} />
-    <Route exact path="" component={App} />
-  </Switch>
-  </BrowserRouter>,
-  document.getElementById('body')
-  );
+// ReactDOM.render(
+//   <BrowserRouter>
+//   <Switch>
+//     <Route exact path="/Cookies.js" component={Cookies} />
+//     <Route exact path="/Cakes.js" component={Cakes} />
+//     <Route exact path="/Donuts.js" component={Donuts} />
+//     <Route exact path="/Bread.js" component={Bread} />
+//     <Route exact path="/Brownies.js" component={Brownies} />
+//     <Route exact path="/FastFood.js" component={FastFood} />
+//     <Route exact path="/SignIn.js" component={SignIn} />
+//     <Route exact path="" component={App} />
+//   </Switch>
+//   </BrowserRouter>,
+//   document.getElementById('body')
+//   );
   
   
-  // render slider from here...............................................................
-ReactDOM.render(
-  <BrowserRouter>
-    <Slider />
-  </BrowserRouter>,
-  document.getElementById('slider')
-  );
+//   // render slider from here...............................................................
+// ReactDOM.render(
+//   <BrowserRouter>
+//     <Slider />
+//   </BrowserRouter>,
+//   document.getElementById('slider')
+//   );
 
-  // render footer here.....................................................................
-  ReactDOM.render(
+//   // render footer here.....................................................................
+//   ReactDOM.render(
 
-    <BrowserRouter>
-    <Footer />
-    </BrowserRouter>,
-    document.getElementById('footer')
-  );
+//     <BrowserRouter>
+//     <Footer />
+//     </BrowserRouter>,
+//     document.getElementById('footer')
+//   );
 
