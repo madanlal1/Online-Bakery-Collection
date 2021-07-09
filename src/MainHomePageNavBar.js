@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import { Menu, Icon,Accordion, Segment } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
-import {Navbar,Container,Nav} from 'react-bootstrap'
+import {Navbar,Container,Nav,Button} from 'react-bootstrap'
 import {cartItems} from './Product'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,19 +39,19 @@ export class MainHomePageNavBar extends React.Component
     <Nav className="me-auto">
       <Nav.Link href="#">         
       <Link to="/">
-                <h4>Home</h4>
+                <Button  variant="outline-primary">Home</Button>
       </Link>
       </Nav.Link>
       <Nav.Link href="#">         
       <Link to="/Products">
-                <h3>Products</h3>
+                    <Button  variant="outline-primary">Products</Button>
             </Link>
       </Nav.Link>
-
+    
       <Nav.Link href="#">         
       <Link to="/Cart">
-            <label>{this.state.countItems}</label>
-                <h4>Cart</h4>
+            <Button  variant="outline-primary">
+                Cart : <label>{this.state.countItems}</label></Button>
             </Link>
       </Nav.Link>
       
