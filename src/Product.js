@@ -5,7 +5,7 @@ import {Row,Col} from 'react-bootstrap'
 export let cartItems=[];
 export function Product(){
 
-    const[products, updateProducts]=useState([])
+  const[products, updateProducts]=useState([])
 
   function handleAddToCart(item){
 
@@ -13,9 +13,11 @@ export function Product(){
 
   }
     useEffect(() => {
-            fetch('Mock.json').then((response)=>response.json()).then((data)=>{
+            fetch('http://localhost:3001/loadAllProductsList').then((response)=>response.json()).then((data)=>{
+                console.log(data)
                 updateProducts(data)
-            })
+
+              })
     }, [])
 
    
@@ -25,15 +27,16 @@ export function Product(){
                    <div class="row">
              {products.map(itm=>{
                  
-               return <div key={'_'+itm.id} class="column" style={{marginTop:"30px"}}>
+               return <div key={'_'+itm.productId} class="column" style={{marginTop:"30px"}}>
                <Card color="blue">
                   <Card.Content>
 
                     <Card.Header>
                      <Row>
                      <Col md={4}>
-                     {itm.name}
+                     {itm.productName}
                      </Col>
+                     <Image src={itm.productImage} style={{height:"300px",width:"200px"}}/>
                      <Col md={8}>
                     
                     <div>
@@ -52,7 +55,7 @@ export function Product(){
                     </Card.Header>
                     <hr />
                     <Card.Description>
-                      Price: <strong>{itm.price}</strong>
+                      Price: <strong>{itm.productPrice}</strong>
                     </Card.Description>
                     </Card.Content>
                  

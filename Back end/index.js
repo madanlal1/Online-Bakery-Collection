@@ -83,7 +83,18 @@ app.post("/login", (req, res)=>{
             })
         })
     })
-
+    app.get("/loadAllProductsList", (req, res)=>{
+        
+        db.getConnection((err, connect)=>{
+            if(err) throw err
+            console.log("fetching products")
+    
+            connect.query("SELECT * from products",(err,rows,fields)=>{
+                if(err) throw err
+                res.send(rows)
+            })
+        })
+    })
     app.get("/register", (req, res)=>{
         
         db.getConnection((err, connect)=>{

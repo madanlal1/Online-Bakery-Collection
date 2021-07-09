@@ -5,6 +5,7 @@ import {Cart} from './Cart'
 
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './Home';
 
 export default function MainStartingApp(){
 
@@ -14,10 +15,9 @@ export default function MainStartingApp(){
                 <Switch>
 
                 <Route exact path="/">
-                        
+                        <Home/>
                 </Route>
-
-
+                
                     <Route exact path="/Products">
                         <Products />
                     </Route>

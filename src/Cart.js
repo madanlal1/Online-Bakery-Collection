@@ -1,5 +1,5 @@
 import { cartItems } from "./Product";
-import { Card, Button, Icon } from "semantic-ui-react";
+import { Card, Button, Icon,Image } from "semantic-ui-react";
 import React, { useState } from "react";
 import {Row,Col} from 'react-bootstrap'
 export class Cart extends React.Component {
@@ -11,11 +11,14 @@ export class Cart extends React.Component {
   }
 
   componentDidMount(){
-
+    console.log(cartItems)
     let prices=cartItems.map((itm)=>{
         
-        return parseFloat(itm.price.substring(1,itm.price.length))
+        // return parseFloat(itm.productPrice.substring(1,itm.productPrice.length))
+        
+        return parseFloat(itm.productPrice)
     })
+
     let bill=0
     if(prices.length>0){
         bill=prices.reduce((prev,current)=>{
@@ -41,7 +44,7 @@ export class Cart extends React.Component {
         /** Calculate bill after item is removed */
         let prices=cartItems.map((itm)=>{
         
-            return parseFloat(itm.price.substring(1,itm.price.length))
+            return parseFloat(itm.productPrice)
         })
         let bill=0
         if(prices.length>0){
@@ -52,9 +55,7 @@ export class Cart extends React.Component {
             this.setState({totalBill:bill})
     
         }
-
-    this.setState({ items: cartItems, totalBill:bill });
-    
+         this.setState({ items: cartItems, totalBill:bill });
   }
 
   render() {
@@ -82,7 +83,7 @@ export class Cart extends React.Component {
               return (
                   
                 <div
-                  key={"_" + itm.id}
+                  key={"_" + itm.productId}
                   class="column"
                   style={{ marginTop: "30px" }}
                 >
@@ -91,12 +92,11 @@ export class Cart extends React.Component {
                     <Card.Header>
                      <Row>
                      <Col md={4}>
-                     {itm.name}
+                     {itm.productName}
                      </Col>
-                     <Col md={8}>
                     
-                   
-                      
+                     <Col md={8}>
+                  
                     <div className="ui two buttons">
                         <Button
                           basic
@@ -113,12 +113,13 @@ export class Cart extends React.Component {
                     </Col>
                      
                     </Row> 
+                    <Image src={itm.productImage} style={{height:"300px",width:"200px"}}/>
                       
                     
                     </Card.Header>
                       <hr />
                       <Card.Description>
-                        Price: <strong>{itm.price}</strong>
+                        Price: <strong>{itm.productPrice}</strong>
                       </Card.Description>
                     </Card.Content>
                     

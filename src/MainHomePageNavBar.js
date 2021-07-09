@@ -53,10 +53,9 @@ export class MainHomePageNavBar extends React.Component
             <Button  variant="outline-primary">
                 Cart : <label>{this.state.countItems}</label></Button>
             </Link>
-      </Nav.Link>
-      
+      </Nav.Link>  
     </Nav>
-   
+
   </Navbar.Collapse>
   </Container>
 </Navbar>
