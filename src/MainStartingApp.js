@@ -2,6 +2,7 @@
 import {Products} from './Products'
 import {MainHomePageNavBar} from './MainHomePageNavBar'
 import {Cart} from './Cart'
+import AskToSinIn from './AskToSinIn'
 import SinInModule from './SinInModule'
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
@@ -19,16 +20,21 @@ export default function MainStartingApp(){
                         <Home/>
                 </Route>
                 
-                    <Route exact path="/SinInArea">
+                    {/* <Route exact path="/SinInArea">
                         
                     </Route>
                     
                     <Route exact path="/SinUpArea">
                         
-                    </Route>
+                    </Route> */}
+
                     <Route exact path="/Cart">
                         <Cart />
                     </Route>
+                    <Route exact path="/AskToSinIn">
+                        <AskToSinIn />
+                    </Route>
+                    
                     
                 </Switch>
             </Router>

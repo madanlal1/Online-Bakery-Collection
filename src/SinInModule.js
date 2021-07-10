@@ -8,14 +8,44 @@ export default function SinInModule(props) {
 
 
     const [show, setShow] = useState(false);
-  
+    const [serverResponse,setServerResponse]=useState("")
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+    
     function sinIn(event)
     {
         //Here we will call the api
+        var data=
+        {
+          userName:userName,
+          password:password
+        }
+        fetch("http://localhost:3001/loginToAccount",{
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          }
+          ).then((respo)=>{return respo.json()}).then((data)=>{
+            console.log(data)
+            console.log(typeof data.responseCode)
+            if(data.responseCode===1)
+            {
+                setServerResponse("Login Sccuess full")
+                localStorage.setItem("is_logeIn",true)
+            }
+            else if(data.responseCode===2)
+            {
+                localStorage.setItem("is_logeIn",false)
+                setServerResponse("Cant find user with these creadentials")
+            }
+           
 
+
+        }
+            )
     }
 
     return (
@@ -53,21 +83,19 @@ export default function SinInModule(props) {
                         <Form.Check type="checkbox" label="Check me out" />
                     
                     </Form.Group>
-                        <Button variant="primary" type="submit" 
-                        onClick={()=>{
-                            sinIn()
-                        }}
-                        >
-                            Submit
-                        </Button>
+                        
                     </Form>
 
           </Modal.Body>
           <Modal.Footer>
+              {serverResponse}
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" 
+             onClick={()=>{
+                sinIn()
+            }}>
                 Sin In
             </Button>
           </Modal.Footer>

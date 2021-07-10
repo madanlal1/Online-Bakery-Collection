@@ -8,15 +8,32 @@ export default function SinUpModule(props) {
     const [name,setName] = useState("")
     const [address,setAddress] = useState("")
     const [bankAccountNumber,setBankAccountNumber] = useState("")
-
+    const [serverResponse,setServerResponse]=useState("")
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
     function sinUp(event)
     {
       
-        // Call the API to create the account
-        console.log("WE are going to create the account of "+userName+name)
+      console.log(userName+name+password)
+        //Call //the API to create the account
+        var data=
+          {
+            userName:userName,
+            name:name,
+            password:password,
+            address:address,
+            bankAccountNumber:bankAccountNumber
+          }
+        
+        fetch("http://localhost:3001/createAccount",{
+          method: 'POST',
+          headers: {
+          'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }
+        ).then((respo)=>{return respo.json()}).then((data)=>{setServerResponse(data.responseMessage)})
     }
     return (
       <>
@@ -82,16 +99,18 @@ export default function SinUpModule(props) {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={
+            {serverResponse}
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={
               ()=>{
                 sinUp()
               }
             }>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
                 Create Account
             </Button>
+
           </Modal.Footer>
         </Modal>
       </>

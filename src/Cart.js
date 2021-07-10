@@ -1,6 +1,6 @@
 import { cartItems } from "./Product";
 import { Card, Button, Icon,Image } from "semantic-ui-react";
-import React, { useState } from "react";
+import React, { useState } from "react"
 import {Row,Col} from 'react-bootstrap'
 export class Cart extends React.Component {
 
@@ -13,8 +13,6 @@ export class Cart extends React.Component {
   componentDidMount(){
     console.log(cartItems)
     let prices=cartItems.map((itm)=>{
-        
-        // return parseFloat(itm.productPrice.substring(1,itm.productPrice.length))
         
         return parseFloat(itm.productPrice)
     })
@@ -53,7 +51,6 @@ export class Cart extends React.Component {
             })
             bill=Math.round(bill)
             this.setState({totalBill:bill})
-    
         }
          this.setState({ items: cartItems, totalBill:bill });
   }
@@ -61,8 +58,9 @@ export class Cart extends React.Component {
   render() {
     return (
       <div style={{ marginLeft: "50px", marginRight: "20px" }}>
+        
         <div class="ui four column grid">
-
+       
             <div class="row">
                 {/* When cart is empty, execute conditional rendering */}
             {this.state.items.length == 0 ? (
@@ -70,9 +68,16 @@ export class Cart extends React.Component {
                 <h1>Cart is Empty</h1>
               </div>
             ) :  (
-                <div style={{ width:"20%", margin:"auto", marginTop:"20px"}}>
-                  <h1>Total Bill is: ${this.state.totalBill}</h1>
-                  <br />
+                <div style={{marginTop:"100px",textAlign:"right"}}>
+                  <Row>
+                    <Col md={6}>
+                       <h1>Total Bill is: ${this.state.totalBill}</h1>
+                    </Col>
+                    <Col md={6} >
+                        <Button className="primary">Check out</Button>
+                    </Col>
+                  </Row>
+                  
                 </div>
               )}
 
@@ -128,6 +133,7 @@ export class Cart extends React.Component {
               );
             })}
           </div>
+
         </div>
       </div>
     );

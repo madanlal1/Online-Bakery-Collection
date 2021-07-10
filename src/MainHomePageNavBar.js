@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import {Link} from 'react-router-dom'
 import { Menu, Icon,Accordion, Segment } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
@@ -30,8 +30,17 @@ export class MainHomePageNavBar extends React.Component
   
     render() {
       const { activeItem } = this.state
-  
-      return (
+      
+      if(localStorage.getItem("is_logeIn")===null)
+      {
+        console.log(localStorage.getItem("is_logeIn"))
+        
+      }
+      else
+      {
+
+      }
+return (
 <div>
  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixed-top">
   <Container>
@@ -44,25 +53,23 @@ export class MainHomePageNavBar extends React.Component
                 <Button  variant="outline-primary">Home</Button>
       </Link>
       </Nav.Link>
-      <Nav.Link href="#">         
-      { <Link to="/SinInArea">
-                    <SinInModule buttonTitle="Sin In"/>
-            </Link>}
+      <Nav.Link href="#">  
+      <SinInModule buttonTitle="Sin In"/>       
       </Nav.Link>
     
-      <Nav.Link href="#">         
-      { <Link to="/SinupArea">
-                    <SinUpModule buttonTitle="Sin Up"/>
-            </Link>}
+      <Nav.Link href="#">      
+      <SinUpModule buttonTitle="Sin Up"/>   
       </Nav.Link>
     
 
-      <Nav.Link href="#">         
+      <Nav.Link href="#">  
+
       <Link to="/Cart">
             <Button  variant="outline-primary">
                 Cart : <label>{this.state.countItems}</label></Button>
             </Link>
-      </Nav.Link>  
+      </Nav.Link>
+
     </Nav>
 
   </Navbar.Collapse>
