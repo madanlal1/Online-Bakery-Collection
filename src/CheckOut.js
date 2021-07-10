@@ -15,7 +15,8 @@ export default function CheckOut(props) {
     const handleShow = () => 
     {
       setShow(true)
-      if(localStorage.getItem("is_logeIn")===null)
+      console.log(localStorage.getItem("is_logeIn"))
+      if(localStorage.getItem("is_logeIn")===null || localStorage.getItem("is_logeIn")==="false")
       {
         setStatus("Please login before you check out")
       }

@@ -70,6 +70,15 @@ return (
             </Link>
       </Nav.Link>
 
+      
+            <Button  variant="outline-primary"
+            onClick={
+              ()=>{
+                localStorage.setItem("is_logeIn",false)
+              }
+            }
+            >Log out </Button>
+    
     </Nav>
 
   </Navbar.Collapse>
