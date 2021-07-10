@@ -2,6 +2,7 @@ import { cartItems } from "./Product";
 import { Card, Button, Icon,Image } from "semantic-ui-react";
 import React, { useState } from "react"
 import {Row,Col} from 'react-bootstrap'
+import CheckOut from "./CheckOut";
 export class Cart extends React.Component {
 
     constructor(props) {
@@ -74,7 +75,7 @@ export class Cart extends React.Component {
                        <h1>Total Bill is: ${this.state.totalBill}</h1>
                     </Col>
                     <Col md={6} >
-                        <Button className="primry">Check out</Button>
+                        <CheckOut buttonTitle="Check out"></CheckOut>
                     </Col>
                   </Row>
                   
