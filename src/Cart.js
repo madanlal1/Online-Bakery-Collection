@@ -74,7 +74,7 @@ export class Cart extends React.Component {
                        <h1>Total Bill is: ${this.state.totalBill}</h1>
                     </Col>
                     <Col md={6} >
-                        <Button className="primary">Check out</Button>
+                        <Button className="primry">Check out</Button>
                     </Col>
                   </Row>
                   
