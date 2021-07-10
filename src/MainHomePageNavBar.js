@@ -6,6 +6,8 @@ import 'semantic-ui-css/semantic.min.css'
 import {Navbar,Container,Nav,Button} from 'react-bootstrap'
 import {cartItems} from './Product'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SinInModule from './SinInModule'
+import SinUpModule from './SinUpModule'
 
 export class MainHomePageNavBar extends React.Component 
 {
@@ -31,7 +33,7 @@ export class MainHomePageNavBar extends React.Component
   
       return (
 <div>
- <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+ <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixed-top">
   <Container>
   <Navbar.Brand href="#MainStartingApp">React-Bootstrap</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -43,11 +45,18 @@ export class MainHomePageNavBar extends React.Component
       </Link>
       </Nav.Link>
       <Nav.Link href="#">         
-      <Link to="/Products">
-                    <Button  variant="outline-primary">Products</Button>
-            </Link>
+      { <Link to="/SinInArea">
+                    <SinInModule buttonTitle="Sin In"/>
+            </Link>}
       </Nav.Link>
     
+      <Nav.Link href="#">         
+      { <Link to="/SinupArea">
+                    <SinUpModule buttonTitle="Sin Up"/>
+            </Link>}
+      </Nav.Link>
+    
+
       <Nav.Link href="#">         
       <Link to="/Cart">
             <Button  variant="outline-primary">

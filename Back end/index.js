@@ -95,6 +95,21 @@ app.post("/login", (req, res)=>{
             })
         })
     })
+
+    app.get("/createAccount", (req, res)=>{
+        
+        db.getConnection((err, connect)=>{
+            if(err) throw err
+            console.log("fetching products")
+    
+            var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+            connect.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("1 record inserted");
+            });
+        })
+    })
+
     app.get("/register", (req, res)=>{
         
         db.getConnection((err, connect)=>{
