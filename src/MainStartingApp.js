@@ -1,5 +1,3 @@
-
-import {Products} from './Products'
 import {MainHomePageNavBar} from './MainHomePageNavBar'
 import {Cart} from './Cart'
 import AskToSinIn from './AskToSinIn'

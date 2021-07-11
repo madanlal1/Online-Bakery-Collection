@@ -38,6 +38,8 @@ export default function SinUpModule(props) {
     return (
       <>
         <Button variant="success" onClick={handleShow}>
+        <img src="https://img.icons8.com/material-outlined/20/ffffff/up3.png"/>
+        &nbsp;
           {props.buttonTitle}
         </Button>
   
@@ -46,7 +48,6 @@ export default function SinUpModule(props) {
             <Modal.Title>Create your account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-             {/* Here you need to add the form which you want for getting input values form user */}
              <Form>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

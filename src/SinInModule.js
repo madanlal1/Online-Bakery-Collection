@@ -51,12 +51,14 @@ export default function SinInModule(props) {
     return (
       <>
         <Button variant="success" onClick={handleShow}>
+        <img src="https://img.icons8.com/ios-glyphs/20/ffffff/login-rounded-down.png"/>
+        &nbsp;
           {props.buttonTitle}
         </Button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Sin in to your account</Modal.Title>
+            <Modal.Title>Sign in to your account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
              {/* Here you need to add the form which you want for getting input values form user */}
@@ -96,7 +98,8 @@ export default function SinInModule(props) {
              onClick={()=>{
                 sinIn()
             }}>
-                Sin In
+              
+                Sign In
             </Button>
           </Modal.Footer>
         </Modal>

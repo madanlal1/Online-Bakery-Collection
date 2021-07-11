@@ -1,4 +1,3 @@
-
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom'
 import { Menu, Icon,Accordion, Segment } from 'semantic-ui-react'
@@ -58,25 +57,27 @@ return (
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
 
-    <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+    <div className="col-xl-4 col-lg-3 col-sm-6 col-xs-12">
       <Nav.Link href="#">         
       <Link to="/">
-                <Button  variant="outline-success form-control">Home</Button>
+      <Button variant="success form-control" style={{fontWeight:'bold'}} > &nbsp; <img src="https://img.icons8.com/material-outlined/24/ffffff/home--v2.png"/> Home</Button>
       </Link>
       </Nav.Link>
       </div>
 
 
-      <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+      <div className="col-xl-4 col-lg-3 col-sm-6 col-xs-12">
       <Nav.Link href="#">  
       <Link to="/Cart">
-            <Button  variant="outline-success form-control">
+            <Button style={{fontWeight:'bold'}}  variant="success form-control">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/fast-cart.png"/>
+            &nbsp;
                 Cart : <label>{this.state.countItems}</label></Button>
             </Link>
       </Nav.Link>
       </div>
       
-      <div className="offset-11 col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+      <div className="offset-1 col-xl-3 col-lg-3 col-sm-6 col-xs-12">
 
       </div>
       
@@ -84,18 +85,20 @@ return (
 
       <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
       <Nav.Link href="#">  
-      <SinInModule buttonTitle="Sin In" />       
+      <SinInModule buttonTitle="Sign In" />       
       </Nav.Link>
       </div>
 
       <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12"> 
       <Nav.Link href="#">      
-      <SinUpModule buttonTitle="Sin Up"/>   
+      <SinUpModule buttonTitle="Sign Up"/>   
       </Nav.Link>
       </div>
 
       <div className="py-2 col-xl-3 col-lg-3 col-sm-6 col-xs-12">
       <Button  variant="outline-success form-control" onClick={ ()=>{ localStorage.setItem("is_logeIn",false) } }>
+      <img src="https://img.icons8.com/ios-glyphs/22/ffffff/logout-rounded-up--v1.png"/>
+      &nbsp;
       Log out 
       </Button>
       </div>
