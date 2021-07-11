@@ -122,6 +122,35 @@ app.get("/loadAllProductsList", (req, res)=>{
    
     })
 
+    app.post("/deleteItem", (req, res)=>{
+        
+        db.getConnection((err, connect)=>{
+        if(err) throw err
+        console.log("fetching products")
+
+        var sql = `DELETE FROM products WHERE productId = '${req.body.productId}'`;
+        connect.query(sql, function (err, result) {
+          if (err) throw err;
+
+          if( result.affectedRows>0)
+          {
+              res.status(200).send({
+                responseCode:1,
+                responseMessage:"Deleted"
+            })
+          }
+          else
+          {
+            res.status(400).send({
+                responseCode:1,
+                responseMessage:"Could not find item with this id"
+            })
+          }
+        });
+      
+    })
+
+})
 
 
 app.listen(3001, ()=>{
