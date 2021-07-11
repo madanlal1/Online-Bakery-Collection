@@ -27,29 +27,30 @@ export function Product(){
                    <div class="row">
              {products.map(itm=>{
                  
-               return <div key={'_'+itm.productId} class="column" style={{marginTop:"30px"}}>
-               <Card color="blue">
+               return <div key={'_'+itm.productId} className="container-fluid d-inline column" style={{marginTop:"30px", width: '22rem'}}>
+               <Card color="blue" style={{borderRadius: "20px", border:"2px solid #5cb85c"}}>
                   <Card.Content>
 
                     <Card.Header>
-                     <Row>
-                     <Col md={4}>
-                     {itm.productName}
-                     </Col>
-                     <Image src={itm.productImage} style={{height:"300px",width:"200px"}}/>
-                     <Col md={8}>
+                     <div className="row">
+                   
+                     <center>{itm.productName}</center>
+                    <br/>
+                     </div>
+                     <div className="row">
+                     <Image src={itm.productImage} style={{width:"22rem", height: "230px", borderRadius: "15px"}}/>
+                
                     
                     <div>
                       
-                      <Button basic color='blue' onClick={()=>{handleAddToCart(itm)}}>
+                      <button className="btn btn-outline-success form-control" onClick={()=>{handleAddToCart(itm)}} style={{marginTop:'10px'}}>
                               <h5>Add to cart</h5>
-                      </Button>
+                      </button>
 
                     </div>
 
-                    </Col>
                      
-                    </Row> 
+                    </div> 
                       
                     
                     </Card.Header>

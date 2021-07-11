@@ -36,11 +36,11 @@ export default function DeleteProduct() {
     console.log(data)
   }
   )
-  
+  alert("Product Deleted")
   }
   return (
     <>
-      <Container fluid="sm" style={{ width: "30rem" }}>
+      <Container fluid="sm" style={{width: "30rem", border: "2px solid green", borderRadius:"20px", padding:"25px" }}>
         <Form>
         
 
@@ -56,7 +56,7 @@ export default function DeleteProduct() {
           </Form.Row>
           <br />
 
-          <Button variant="primary" className="insert"
+          <Button variant="outline-success form-control" className="insert"
           onClick={()=>{
             deleteItem();
           }}

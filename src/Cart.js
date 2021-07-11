@@ -96,13 +96,16 @@ export class Cart extends React.Component {
                   <Card color="blue">
                     <Card.Content>
                     <Card.Header>
-                     <Row>
-                     <Col md={4}>
-                     {itm.productName}
+                     <Col md={12}>
+                     <center>{itm.productName}</center>
                      </Col>
+                     
+                    <Image src={itm.productImage} style={{height:"284px",width:"19rem"}}/>
+                      
                     
-                     <Col md={8}>
-                  
+                    </Card.Header>
+
+                    <br/>
                     <div className="ui two buttons">
                         <Button
                           basic
@@ -114,15 +117,8 @@ export class Cart extends React.Component {
                           <h5>Remove</h5>
                         </Button>
                       </div>
-                   
 
-                    </Col>
-                     
-                    </Row> 
-                    <Image src={itm.productImage} style={{height:"300px",width:"200px"}}/>
-                      
-                    
-                    </Card.Header>
+
                       <hr />
                       <Card.Description>
                         Price: <strong>{itm.productPrice}</strong>

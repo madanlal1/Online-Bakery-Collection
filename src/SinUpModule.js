@@ -37,7 +37,7 @@ export default function SinUpModule(props) {
     }
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="success" onClick={handleShow}>
           {props.buttonTitle}
         </Button>
   

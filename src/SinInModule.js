@@ -50,7 +50,7 @@ export default function SinInModule(props) {
 
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="success" onClick={handleShow}>
           {props.buttonTitle}
         </Button>
   

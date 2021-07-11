@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import "./App.css";
 import { Button, Form, Container, Col } from "react-bootstrap";
-// import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function AddProduct() {
@@ -33,16 +32,17 @@ export default function AddProduct() {
           setServerResponse(data.responseMessage)
           console.log(data)
         }
-          )
+        )
+        alert("Product Added")
   }
 
   return (
   <>
-    <Container fluid="sm" style={{ width: "30rem" }}>
+    <Container style={{ width: "30rem", border: "2px solid green", borderRadius:"20px", padding:"25px" }}>
       <Form>
-        <Form.Row>
-          <Form.Group controlId="formGroupEmail">
-            <Form.Label>Product Name</Form.Label>
+        <Form.Row >
+          <Form.Group   controlId="formGroupEmail">
+            <Form.Label >Product Name</Form.Label>
             <Form.Control type="name" placeholder="Enter Name" 
             onChange={(ev)=>{
               setProductName(ev.target.value)
@@ -50,7 +50,6 @@ export default function AddProduct() {
             />
           </Form.Group>
         </Form.Row>
-
        
 
         <Form.Row>
@@ -83,16 +82,18 @@ export default function AddProduct() {
         </Form.Row>
         <br />
 
-        <Button variant="primary" className="insert" 
+        <Button variant="outline-success form-control" className="insert" 
         onClick={()=>{
           insertIntoDataBase();
         }}
         >
           Insert Products
         </Button>
-        {setServerResponse}
+        {serverResponse}
       </Form>
     </Container>
+    <br/>
+    <br/>
   </>
   )
 }

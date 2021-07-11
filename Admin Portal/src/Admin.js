@@ -10,10 +10,12 @@ export default function Admin() {
   const [buttonOpt,setButtonOpt]=useState()
   return (
     <>
-      <Container fluid="sm" style={{ width: "30rem" }}>
-        <h1 style={{ textAlign: "center" }}>Admin Dashboard</h1>
+      <Container fluid>
+      <div style={{backgroundColor:"lightGreen", color:"#303030", width:"100%", height:"60px", padding:"auto"}}>
+        <h1 style={{ textAlign: "center"}}>Admin Dashboard</h1>
+        </div>
         <br />
-        <Button variant="primary" className="insert"
+        <Button variant="success form-control" className="insert"
         onClick={()=> setButtonOpt(<AddProduct/>)}
         >
           ADD Product
@@ -23,7 +25,7 @@ export default function Admin() {
           <br />
         </div>
 
-        <Button variant="primary" className="insert" onClick={()=> setButtonOpt(<DeleteProduct/>)}>
+        <Button variant="success form-control" className="insert" onClick={()=> setButtonOpt(<DeleteProduct/>)}>
           DELETE Product
         </Button>
       </Container>

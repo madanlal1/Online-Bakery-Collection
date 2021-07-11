@@ -41,48 +41,68 @@ export class MainHomePageNavBar extends React.Component
 
       }
 return (
-<div>
+<div className="row">
  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixed-top">
-  <Container>
-  <Navbar.Brand href="#MainStartingApp">React-Bootstrap</Navbar.Brand>
+
+ <div className="py-2 px-4 col-xl-3 col-lg-3 col-sm-6 col-xs-12 hvr">
+    <a href="index.html" style={{textDecoration: "none", color: "white", fontSize:'22px'}}>
+        <img src="images/logo.png" alt="logo" width="45px" style={{marginTop: "-7px"}} />
+        &nbsp;
+        Bakery Collection
+    </a>
+    </div>
+
+
+
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
+
+    <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
       <Nav.Link href="#">         
       <Link to="/">
-                <Button  variant="outline-primary">Home</Button>
+                <Button  variant="outline-success form-control">Home</Button>
       </Link>
       </Nav.Link>
-      <Nav.Link href="#">  
-      <SinInModule buttonTitle="Sin In"/>       
-      </Nav.Link>
-    
-      <Nav.Link href="#">      
-      <SinUpModule buttonTitle="Sin Up"/>   
-      </Nav.Link>
-    
+      </div>
 
-      <Nav.Link href="#">  
 
+      <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+      <Nav.Link href="#">  
       <Link to="/Cart">
-            <Button  variant="outline-primary">
+            <Button  variant="outline-success form-control">
                 Cart : <label>{this.state.countItems}</label></Button>
             </Link>
       </Nav.Link>
-
+      </div>
       
-            <Button  variant="outline-primary"
-            onClick={
-              ()=>{
-                localStorage.setItem("is_logeIn",false)
-              }
-            }
-            >Log out </Button>
+      <div className="offset-11 col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+
+      </div>
+      
+
+
+      <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+      <Nav.Link href="#">  
+      <SinInModule buttonTitle="Sin In" />       
+      </Nav.Link>
+      </div>
+
+      <div className="col-xl-3 col-lg-3 col-sm-6 col-xs-12"> 
+      <Nav.Link href="#">      
+      <SinUpModule buttonTitle="Sin Up"/>   
+      </Nav.Link>
+      </div>
+
+      <div className="py-2 col-xl-3 col-lg-3 col-sm-6 col-xs-12">
+      <Button  variant="outline-success form-control" onClick={ ()=>{ localStorage.setItem("is_logeIn",false) } }>
+      Log out 
+      </Button>
+      </div>
     
     </Nav>
 
   </Navbar.Collapse>
-  </Container>
 </Navbar>
 </div>
 )
