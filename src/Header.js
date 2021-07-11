@@ -4,7 +4,7 @@ function Header(){
 
     return(
     <>
-    <div className="py-1 col-xl-3 col-lg-3 col-sm-6 col-xs-12 hvr">
+    <div className="py-1 col-xl-3 col-lg-3 col-sm-6 col-xs-12 ">
     <a href="index.html" style={{textDecoration: "none", color: "white"}}>
         <img src="images/logo.png" alt="logo" width="45px" style={{marginTop: "-7px"}} />
         Bakery Collection

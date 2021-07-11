@@ -11,7 +11,6 @@ function App() {
 
 export default App;
 
-// cards attribute data 
   function cData(val){
     return(
     <>
