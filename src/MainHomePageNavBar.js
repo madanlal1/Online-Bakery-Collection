@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom'
-import { Menu, Icon,Accordion, Segment } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import {Navbar,Container,Nav,Button} from 'react-bootstrap'
 import {cartItems} from './Product'
@@ -44,7 +43,7 @@ return (
  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixed-top">
 
  <div className="py-2 px-4 col-xl-3 col-lg-3 col-sm-6 col-xs-12 hvr">
-    <a href="index.html" style={{textDecoration: "none", color: "white", fontSize:'22px'}}>
+    <a href="#" style={{textDecoration: "none", color: "white", fontSize:'22px'}}>
         <img src="images/logo.png" alt="logo" width="45px" style={{marginTop: "-7px"}} />
         &nbsp;
         Bakery Collection
@@ -59,9 +58,7 @@ return (
 
     <div className="col-xl-4 col-lg-3 col-sm-6 col-xs-12">
       <Nav.Link href="#">         
-      <Link to="/">
       <Button variant="success form-control" style={{fontWeight:'bold'}} > &nbsp; <img src="https://img.icons8.com/material-outlined/24/ffffff/home--v2.png"/> Home</Button>
-      </Link>
       </Nav.Link>
       </div>
 

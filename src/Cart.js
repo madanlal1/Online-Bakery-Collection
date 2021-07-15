@@ -29,8 +29,7 @@ export class Cart extends React.Component {
     }
 
   removeFromCartHandler(itm) {
-    
-    /**Remove item */
+
     let removeIndex = 0;
 
     this.state.items.forEach((element, index) => {
@@ -40,7 +39,6 @@ export class Cart extends React.Component {
     });
     cartItems.splice(removeIndex, 1);
 
-        /** Calculate bill after item is removed */
         let prices=cartItems.map((itm)=>{
         
             return parseFloat(itm.productPrice)
@@ -63,7 +61,7 @@ export class Cart extends React.Component {
         <div class="ui four column grid">
        
             <div class="row">
-                {/* When cart is empty, execute conditional rendering */}
+
             {this.state.items.length == 0 ? (
               <div style={{ width:"20%", margin:"auto", marginTop:"20px"}}>
                 <h1>Cart is Empty</h1>
@@ -71,10 +69,11 @@ export class Cart extends React.Component {
             ) :  (
                 <div style={{marginTop:"100px",textAlign:"right"}}>
                   <Row>
-                    <Col md={6}>
+                    <Col md={7}>
+                    <br/>
                        <h1>Total Bill is: ${this.state.totalBill}</h1>
                     </Col>
-                    <Col md={6} >
+                    <Col md={5} >
                         <CheckOut buttonTitle="Check out"></CheckOut>
                     </Col>
                   </Row>
@@ -107,15 +106,15 @@ export class Cart extends React.Component {
 
                     <br/>
                     <div className="ui two buttons">
-                        <Button
-                          basic
-                          color="blue"
+                        <button
+                          
+                          className="btn btn-outline-success form-control"
                           onClick={() => {
                             this.removeFromCartHandler(itm);
                           }}
                         >
                           <h5>Remove</h5>
-                        </Button>
+                        </button>
                       </div>
 
 

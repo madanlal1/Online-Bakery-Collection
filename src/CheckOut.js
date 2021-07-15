@@ -22,14 +22,16 @@ export default function CheckOut(props) {
       }
       else
       {
-        setStatus("Check out done successfully")
+        setStatus("Check out done successfully");
         
+////////////////////////     
       }
     }
   
     return (
       <div>
-        <Button variant="primary" onClick={handleShow}>
+        <br/>
+        <Button variant="outline-success" onClick={handleShow}>
           {props.buttonTitle}
         </Button>
   

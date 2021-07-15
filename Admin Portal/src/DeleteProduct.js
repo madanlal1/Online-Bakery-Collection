@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import "./App.css";
 import { Button, Form, Container, Col } from "react-bootstrap";
-// import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function DeleteProduct() {
@@ -15,15 +14,6 @@ export default function DeleteProduct() {
       productId:productId
     }
  
-    
-
-
-
-
-
-
-
-    // ncxcx
   fetch("http://localhost:3001/deleteItem",{
     method: 'POST',
     headers: {
@@ -61,7 +51,7 @@ export default function DeleteProduct() {
             deleteItem();
           }}
           >
-            Delete Products
+            Delete Product
           </Button>
           {serverResponse}
         </Form>

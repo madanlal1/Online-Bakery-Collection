@@ -1,7 +1,6 @@
 
 import {useState, useEffect} from 'react'
-import {Button, Card, Image, Icon} from 'semantic-ui-react'
-import {Row,Col} from 'react-bootstrap'
+import {Card, Image} from 'semantic-ui-react'
 export let cartItems=[];
 export function Product(){
 
